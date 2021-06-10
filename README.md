@@ -1,0 +1,1 @@
+java -jar -Dcsv.report.path=/Users/arunstiwari/training/spectramedix/utility-hedis/src/test/resources/ES_count_report.csv -Des_url=http://localhost:2304/abc -Dtablename=patient ./target/hedis-utility-jar-with-dependencies.jar
