@@ -59,6 +59,8 @@ public class HedisMeasureVerifier {
             System.out.println("Matched record table name is : "+foundRecord.get(0));
             System.out.println("Matched record count is : "+foundRecord.get(1));
         }
+        int totalCountFromCSVFile = Integer.valueOf(foundRecord.get(1).trim());
+        System.out.println("totalCountFromCSVFile = " + totalCountFromCSVFile);
 
         Response response = given()
                 .accept(JSON)
@@ -72,8 +74,7 @@ public class HedisMeasureVerifier {
         System.out.println("response = " + response.getBody().asString());
         int totalCount = response.body().jsonPath().get("hits.total");
         System.out.println("totalCount = " + totalCount);
-        int totalCountFromCSVFile = Integer.valueOf(foundRecord.get(1));
-        System.out.println("totalCountFromCSVFile = " + totalCountFromCSVFile);
+
         if (totalCount == totalCountFromCSVFile){
             System.out.println("Count Records match correctly");
             System.exit(0);
