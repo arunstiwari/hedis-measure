@@ -41,6 +41,13 @@ public class HedisMeasureVerifier {
 
         List<List<String>> recordsList = records.subList(2, records.size() - 1);
         System.out.println("recordsList.size() = " + recordsList.size());
+        recordsList.stream()
+                .filter(rec -> rec.size() > 1)
+                .forEach(rec -> {
+                    System.out.println("rec = " + rec.get(0)+"WBC");
+                    System.out.println("rec = " + rec.get(0).trim()+"WBC");
+                    System.out.println("rec.get(0).trim().equalsIgnoreCase(tablename) = " + rec.get(0).trim().equalsIgnoreCase(tablename));
+                });
         List<String> foundRecord = recordsList.stream()
                 .filter(rec -> rec.size() >1)
                 .filter(rec -> rec.get(0).trim().equalsIgnoreCase(tablename))
