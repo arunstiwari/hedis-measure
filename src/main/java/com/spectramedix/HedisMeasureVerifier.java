@@ -19,6 +19,10 @@ public class HedisMeasureVerifier {
         String path = System.getProperty("csv.report.path");
         String es_url = System.getProperty("es_url");
         String tablename = System.getProperty("tablename");
+        System.out.println("path = " + path);
+        System.out.println("es_url = " + es_url);
+        System.out.println("tablename = " + tablename);
+        
         if (path == null || es_url == null || tablename == null) {
             System.out.println("Specify the parameter -Dcsv.report.path" );
             System.out.println("Specify the parameter -Des_url" );
@@ -36,6 +40,7 @@ public class HedisMeasureVerifier {
         }
 
         List<List<String>> recordsList = records.subList(2, records.size() - 1);
+        System.out.println("recordsList.size() = " + recordsList.size());
         List<String> foundRecord = recordsList.stream()
                 .filter(rec -> rec.size() >1)
                 .filter(rec -> rec.get(0).trim().equalsIgnoreCase(tablename))
