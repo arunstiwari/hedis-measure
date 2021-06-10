@@ -70,9 +70,11 @@ public class HedisMeasureVerifier {
                 .extract()
                 .response();
         System.out.println("response = " + response.getBody().asString());
-        String totalCount = response.body().jsonPath().get("hits.total");
+        int totalCount = response.body().jsonPath().get("hits.total");
         System.out.println("totalCount = " + totalCount);
-        if (totalCount == foundRecord.get(1)){
+        int totalCountFromCSVFile = Integer.valueOf(foundRecord.get(1));
+        System.out.println("totalCountFromCSVFile = " + totalCountFromCSVFile);
+        if (totalCount == totalCountFromCSVFile){
             System.out.println("Count Records match correctly");
             System.exit(0);
         }else{
