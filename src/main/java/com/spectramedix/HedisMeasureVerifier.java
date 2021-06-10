@@ -13,7 +13,7 @@ import static io.restassured.http.ContentType.JSON;
 
 public class HedisMeasureVerifier {
 
-    private static final String TAB_DELIMITER = "\t";
+    private static final String TAB_DELIMITER = ",";
 
     public static void main(String[] args) {
         String path = System.getProperty("csv.report.path");
@@ -39,7 +39,7 @@ public class HedisMeasureVerifier {
             e.printStackTrace();
         }
 
-        List<List<String>> recordsList = records.subList(2, records.size() - 1);
+        List<List<String>> recordsList = records.subList(2, records.size() - 2);
         System.out.println("recordsList.size() = " + recordsList.size());
         recordsList.stream()
 //                .filter(rec -> rec.size() > 1)

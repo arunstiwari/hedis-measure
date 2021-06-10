@@ -1,12 +1,12 @@
-Tablename         	Records
-------------------	-----------
-patient           	100
-careplan          	0
-ClaimItem         	100
-Diseaseregistry   	100
-Immunization      	0
-MedicationDispense	0
-Observation       	0
-Procedures        	100
+Tablename         ,Records
+------------------,-----------
+patient           ,        100
+careplan          ,          0
+ClaimItem         ,        100
+Diseaseregistry   ,        100
+Immunization      ,          0
+MedicationDispense,          0
+Observation       ,          0
+Procedures        ,        100
 
 (8 rows affected)
