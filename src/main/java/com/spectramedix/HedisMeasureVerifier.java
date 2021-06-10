@@ -62,8 +62,6 @@ public class HedisMeasureVerifier {
 
         Response response = given()
                 .accept(JSON)
-                .queryParam("page", "1")
-                .queryParam("limit", "50")
                 .when()
                 .get(es_url)
                 .then()
