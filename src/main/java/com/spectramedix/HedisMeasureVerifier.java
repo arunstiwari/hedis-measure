@@ -67,7 +67,7 @@ public class HedisMeasureVerifier {
                 .when()
                 .get(es_url)
                 .then()
-                .statusCode(200)
+//                .statusCode(200)
                 .contentType(JSON)
                 .extract()
                 .response();
